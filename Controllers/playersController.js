@@ -29,9 +29,8 @@ exports.Filter = async (req, res) => {
 };
 exports.AddTeam = async (req,res)=>{
   try {
-    const { players } = req.body;
-
-    if (!players || !Array.isArray(players) || players.length === 0) {
+    const  players = req.body;
+    if (!players || !Array.isArray(players) || !(players.length == 5) || players.some(e => e === null) ) {
         return res.status(400).json({ message: "Players data is required and should be an array." });
     }
 
