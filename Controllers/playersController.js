@@ -7,7 +7,7 @@ exports.Filter = async (req, res) => {
     threePercent: req.body.threePercent,
     twoPercent: req.body.twoPercent,
   };
-  const players =await playerModel
+  const players =await playerModel.Players
     .where("position")
     .equals(parameters.position)
      .where("points")
